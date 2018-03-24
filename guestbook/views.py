@@ -22,7 +22,8 @@ def sign(request):
                 name=request.POST['name'], comment=request.POST['comment'])
             new_comment.save()
             messages.add_message(request, messages.SUCCESS,
-                                 'Comment successfully added.')
+                                 'Comment successfully added  {} .'
+                                 .format(request.POST['name']))
 
             return redirect('index')
     else:
